@@ -1,9 +1,8 @@
 with open("day6_input.txt", "r") as f:
     all_answers = list(f.read().split('\n\n'))
 
-counts = []
-
 def get_total_count(all_answers):
+    counts = []
     for group in all_answers:
         questions_answered = []
         for person in group:
@@ -15,3 +14,16 @@ def get_total_count(all_answers):
     print("The total count is {}".format(sum(counts)))
 
 get_total_count(all_answers)
+
+def get_all_yes_count(all_answers):
+    counts = []
+    for group in all_answers:
+        questions_answered = []
+        all_responses = group.split('\n')
+
+        result = set(all_responses[0]).intersection(*all_responses) # https://www.semicolonworld.com/question/53496/python-intersection-of-multiple-lists
+        counts.append(len(result))
+
+    print("The total count is {}".format(sum(counts)))
+        
+get_all_yes_count(all_answers)
