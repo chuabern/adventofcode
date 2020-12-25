@@ -1,5 +1,3 @@
-import csv
-
 with open("day2_input.txt", "r") as f:
     passwords = list(f.read().split('\n'))
 
