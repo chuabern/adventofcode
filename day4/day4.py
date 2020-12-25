@@ -85,10 +85,18 @@ def number_valid_passports_new_condition(passports):
         if 'ecl' in fields.keys():
             if any(color in fields['ecl'] for color in eye_colors):
                 valid_fields += 1
+            else: 
+                continue
+        else:
+            continue
 
         if 'pid' in fields.keys():
             if len(fields['pid']) == 9 and re.findall("[0-9]", fields['pid']):
                 valid_fields += 1
+            else:
+                continue
+        else:
+            continue
 
         if valid_fields == 7:
             valid_passports += 1
