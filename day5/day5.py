@@ -40,4 +40,23 @@ def get_seat_ids(all_seats):
 
     return(seat_ids)
 
-print(max(get_seat_ids(all_seats)))
+seat_ids = sorted(get_seat_ids(all_seats))
+
+
+actual_seat = 0
+
+while actual_seat == 0:
+    for seat in seat_ids:
+        if seat == seat_ids[0] or seat == seat_ids[-1]: #remove first and last seat
+            continue
+        if seat-1 not in seat_ids and seat+1 in seat_ids:
+            lower_seat = seat
+            print(lower_seat)
+        if seat+1 not in seat_ids and seat-1 in seat_ids:
+            upper_seat = seat
+            print(upper_seat)
+    actual_seat = int(lower_seat+upper_seat)/2
+
+print(actual_seat)
+
+
