@@ -5,16 +5,6 @@ with open('day8_input.txt', 'r') as text:
 
 accumulator = 0 # initialize accumulator value at 0
 index = 0 # initialize index at 0
-# for line in lines:
-#   index += 1
-#   action = line.split()[0]
-#   value = line.split()[1]
-
-#   if action == 'nop':
-#     continue
-#   elif action == 'acc':
-#     accumulator += value
-#   elif action == 'jmp':
 
 total_length = len(lines)
 
