@@ -1,7 +1,7 @@
 import copy
 with open('day11_input.txt', 'r') as text:
     lines = text.read().split("\n")
-
+# part 1
 
 def split(word):
     return [char for char in word]
